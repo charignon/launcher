@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+app = ARGV*"\\\ "
+`/Applications/#{app}.app/Contents/MacOS/#{app}`
+
+
+
+
+
+
+
+
+
+
+
+
