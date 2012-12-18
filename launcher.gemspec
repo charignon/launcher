@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A simple hello world gem"
   s.authors     = ["Laurent Charignon"]
   s.email       = 'l.charignon@gmail.com'
-  s.files       = ["lib/launcher.rb", "bin/launcher"]
+  s.files       = Dir["{bin,doc,spec,lib}/**/*"]
   s.executables << 'launcher'
   s.homepage    =
     'https://github.com/charignon/launcher' 
