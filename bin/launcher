@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+require "colorize"
+require "text"
+require "launcher"
+
+
+# To be added in colorize Gem
+class String
+	def bold
+		"\033[1m"+self+"\033[22m"
+	end
+
+	def highlight_first
+		self[0].bold + self[1..-1]
+	end
+end
+
+def show_similar_and_exit app
+	puts "Application #{app.name} doesn't exist"
+	closest = app.closest_names
+	puts "Closest matches #{closest.map(&:bold).join(", ")}" unless closest.empty?
+	exit 1
+end
+
+
+
+command = ARGV[0]
+case command
+when "list" 
+	Helper::highlight_display Application.list
+else
+	app = Application.find(ARGV)
+	show_similar_and_exit(app) if app.not_found?
+	app.exec
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
