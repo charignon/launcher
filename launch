@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 app = ARGV*"\\\ "
-`/Applications/#{app}.app/Contents/MacOS/#{app}`
+`/Applications/#{app}.app/Contents/MacOS/#{app}` unless fork
 
 
 
